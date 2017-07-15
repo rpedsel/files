@@ -11773,7 +11773,7 @@ div#notebook {
 
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[8]:</div>
+<div class="prompt input_prompt">In&nbsp;[27]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="kn">as</span> <span class="nn">pd</span>
@@ -11790,7 +11790,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[9]:</div>
+<div class="prompt input_prompt">In&nbsp;[28]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="k">def</span> <span class="nf">shuffle_dict</span><span class="p">(</span><span class="n">col</span><span class="p">,</span><span class="n">seed</span><span class="p">):</span>
@@ -11808,7 +11808,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[10]:</div>
+<div class="prompt input_prompt">In&nbsp;[29]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="k">def</span> <span class="nf">label</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
@@ -11826,7 +11826,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[11]:</div>
+<div class="prompt input_prompt">In&nbsp;[30]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="k">def</span> <span class="nf">safe_div</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
@@ -11842,7 +11842,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[12]:</div>
+<div class="prompt input_prompt">In&nbsp;[31]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="n">o_185</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;https://raw.githubusercontent.com/rpedsel/files/master/o_185_trainData.csv&#39;</span><span class="p">)</span>
@@ -11859,7 +11859,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[13]:</div>
+<div class="prompt input_prompt">In&nbsp;[32]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="n">countries</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;https://raw.githubusercontent.com/rpedsel/files/master/feature_vectors.csv&quot;</span><span class="p">,</span><span class="n">header</span><span class="o">=</span><span class="bp">None</span><span class="p">)</span>
@@ -11904,7 +11904,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[41]:</div>
+<div class="prompt input_prompt">In&nbsp;[34]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="k">def</span> <span class="nf">runCorrDrop_</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">cat</span><span class="o">=</span><span class="p">[],</span> <span class="n">unknown</span><span class="o">=</span><span class="bp">False</span><span class="p">):</span>
@@ -11937,14 +11937,15 @@ div#notebook {
                 <span class="n">lvl_ratio</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="nb">round</span><span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">level</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">),</span><span class="mi">4</span><span class="p">),</span><span class="n">lvl</span><span class="p">))</span>
          
                 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
-                    <span class="n">datacopy</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
-                    <span class="n">datacopy</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="n">shuffle_dict</span><span class="p">(</span><span class="n">datacopy</span><span class="p">[</span><span class="n">name</span><span class="p">],</span><span class="n">i</span><span class="p">)</span>
-                    <span class="n">corr</span> <span class="o">=</span> <span class="n">datacopy</span><span class="o">.</span><span class="n">corr</span><span class="p">(</span><span class="n">method</span><span class="o">=</span><span class="s1">&#39;spearman&#39;</span><span class="p">)[</span><span class="n">name</span><span class="p">]</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>               
+                    <span class="n">ndatacopy</span> <span class="o">=</span> <span class="n">ndata</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+                    <span class="n">ndatacopy</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="n">shuffle_dict</span><span class="p">(</span><span class="n">ndatacopy</span><span class="p">[</span><span class="n">name</span><span class="p">],</span><span class="n">i</span><span class="p">)</span>
+                    <span class="n">corr</span> <span class="o">=</span> <span class="n">ndatacopy</span><span class="o">.</span><span class="n">corr</span><span class="p">(</span><span class="n">method</span><span class="o">=</span><span class="s1">&#39;spearman&#39;</span><span class="p">)[</span><span class="n">name</span><span class="p">]</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>               
                     <span class="n">shuf</span> <span class="o">=</span> <span class="nb">abs</span><span class="p">(</span><span class="n">corr</span><span class="p">)</span>
                     <span class="n">temp</span> <span class="o">=</span> <span class="p">[</span><span class="nb">min</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">shuf</span><span class="p">,</span> <span class="n">temp</span><span class="p">)]</span>
                 <span class="c1">#pair = zip((orig-temp),orig)</span>
                 <span class="c1">#drop = map(safe_div, pair)</span>
                 <span class="c1">#p = orig*drop</span>
+
                 <span class="n">p</span> <span class="o">=</span> <span class="n">orig</span><span class="o">-</span><span class="n">temp</span>
                 <span class="n">table</span> <span class="o">=</span> <span class="n">table</span><span class="o">.</span><span class="n">append</span><span class="p">({</span><span class="s1">&#39;col_name&#39;</span><span class="p">:</span><span class="n">name</span><span class="p">,</span> <span class="s1">&#39;level&#39;</span><span class="p">:</span><span class="n">lvl</span><span class="p">,</span> <span class="s1">&#39;level_ratio&#39;</span><span class="p">:</span><span class="n">lvl_ratio</span><span class="p">,</span>
                                      <span class="s1">&#39;nunique&#39;</span><span class="p">:</span><span class="n">col</span><span class="o">.</span><span class="n">nunique</span><span class="p">(),</span> <span class="s1">&#39;nunique_ratio&#39;</span><span class="p">:</span><span class="nb">round</span><span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="n">col</span><span class="o">.</span><span class="n">nunique</span><span class="p">()),</span><span class="mi">5</span><span class="p">)</span><span class="o">/</span><span class="n">col</span><span class="o">.</span><span class="n">count</span><span class="p">(),</span>
@@ -11976,7 +11977,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[15]:</div>
+<div class="prompt input_prompt">In&nbsp;[35]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="n">runCorrDrop_</span><span class="p">(</span><span class="n">earn</span><span class="p">,[</span><span class="s1">&#39;workclass&#39;</span><span class="p">,</span><span class="s1">&#39;education&#39;</span><span class="p">,</span><span class="s1">&#39;education-num&#39;</span><span class="p">,</span><span class="s1">&#39;marital-status&#39;</span><span class="p">,</span><span class="s1">&#39;occupation&#39;</span><span class="p">,</span><span class="s1">&#39;relationship&#39;</span><span class="p">,</span><span class="s1">&#39;race&#39;</span><span class="p">,</span><span class="s1">&#39;sex&#39;</span><span class="p">,</span><span class="s1">&#39;native-country&#39;</span><span class="p">,</span><span class="s1">&#39;earn&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">sort_values</span><span class="p">([</span><span class="s1">&#39;type&#39;</span><span class="p">,</span><span class="s1">&#39;dtype&#39;</span><span class="p">])</span>
@@ -11992,7 +11993,7 @@ div#notebook {
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[15]:</div>
+<div class="prompt output_prompt">Out[35]:</div>
 
 
 
@@ -12220,7 +12221,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[16]:</div>
+<div class="prompt input_prompt">In&nbsp;[36]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="n">runCorrDrop_</span><span class="p">(</span><span class="n">pokerhand</span><span class="p">,[</span><span class="s1">&#39;S1&#39;</span><span class="p">,</span><span class="s1">&#39;S2&#39;</span><span class="p">,</span><span class="s1">&#39;S3&#39;</span><span class="p">,</span><span class="s1">&#39;S4&#39;</span><span class="p">,</span><span class="s1">&#39;S5&#39;</span><span class="p">,</span><span class="s1">&#39;class&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">sort_values</span><span class="p">([</span><span class="s1">&#39;type&#39;</span><span class="p">,</span><span class="s1">&#39;dtype&#39;</span><span class="p">])</span>
@@ -12236,7 +12237,7 @@ div#notebook {
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[16]:</div>
+<div class="prompt output_prompt">Out[36]:</div>
 
 
 
@@ -12416,7 +12417,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[17]:</div>
+<div class="prompt input_prompt">In&nbsp;[37]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="n">runCorrDrop_</span><span class="p">(</span><span class="n">mmg</span><span class="p">,[</span><span class="s1">&#39;BIRADS&#39;</span><span class="p">,</span><span class="s1">&#39;Shape&#39;</span><span class="p">,</span><span class="s1">&#39;Margin&#39;</span><span class="p">,</span><span class="s1">&#39;Density&#39;</span><span class="p">,</span><span class="s1">&#39;Severity&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">sort_values</span><span class="p">([</span><span class="s1">&#39;type&#39;</span><span class="p">,</span><span class="s1">&#39;dtype&#39;</span><span class="p">])</span>
@@ -12432,7 +12433,7 @@ div#notebook {
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[17]:</div>
+<div class="prompt output_prompt">Out[37]:</div>
 
 
 
@@ -12552,7 +12553,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[18]:</div>
+<div class="prompt input_prompt">In&nbsp;[38]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="n">runCorrDrop_</span><span class="p">(</span><span class="n">game</span><span class="p">,[</span><span class="s1">&#39;GameID&#39;</span><span class="p">,</span><span class="s1">&#39;LeagueIndex&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">sort_values</span><span class="p">([</span><span class="s1">&#39;type&#39;</span><span class="p">,</span><span class="s1">&#39;dtype&#39;</span><span class="p">])</span>
@@ -12568,7 +12569,7 @@ div#notebook {
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[18]:</div>
+<div class="prompt output_prompt">Out[38]:</div>
 
 
 
@@ -12856,7 +12857,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[19]:</div>
+<div class="prompt input_prompt">In&nbsp;[39]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="n">runCorrDrop_</span><span class="p">(</span><span class="n">o_185</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="mi">0</span><span class="p">),[</span><span class="s1">&#39;d3mIndex&#39;</span><span class="p">,</span><span class="s1">&#39;Player&#39;</span><span class="p">,</span><span class="s1">&#39;Position&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">sort_values</span><span class="p">([</span><span class="s1">&#39;type&#39;</span><span class="p">,</span><span class="s1">&#39;dtype&#39;</span><span class="p">])</span>
@@ -12874,7 +12875,7 @@ div#notebook {
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[19]:</div>
+<div class="prompt output_prompt">Out[39]:</div>
 
 
 
@@ -13138,7 +13139,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[20]:</div>
+<div class="prompt input_prompt">In&nbsp;[40]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="n">runCorrDrop_</span><span class="p">(</span><span class="n">o_196</span><span class="o">.</span><span class="n">dropna</span><span class="p">(),[</span><span class="s1">&#39;d3mIndex&#39;</span><span class="p">,</span><span class="s1">&#39;cylinders&#39;</span><span class="p">,</span><span class="s1">&#39;model&#39;</span><span class="p">,</span><span class="s1">&#39;origin&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">sort_values</span><span class="p">([</span><span class="s1">&#39;type&#39;</span><span class="p">,</span><span class="s1">&#39;dtype&#39;</span><span class="p">])</span>
@@ -13154,7 +13155,7 @@ div#notebook {
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[20]:</div>
+<div class="prompt output_prompt">Out[40]:</div>
 
 
 
@@ -13298,7 +13299,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[21]:</div>
+<div class="prompt input_prompt">In&nbsp;[41]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="n">cat</span> <span class="o">=</span> <span class="p">[</span>
@@ -13342,7 +13343,7 @@ div#notebook {
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[21]:</div>
+<div class="prompt output_prompt">Out[41]:</div>
 
 
 
@@ -13654,7 +13655,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[22]:</div>
+<div class="prompt input_prompt">In&nbsp;[42]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="n">runCorrDrop_</span><span class="p">(</span><span class="n">o_313</span><span class="o">.</span><span class="n">dropna</span><span class="p">(),[</span><span class="s1">&#39;d3mIndex&#39;</span><span class="p">,</span> <span class="s1">&#39;LRS-name&#39;</span><span class="p">,</span><span class="s1">&#39;ID-type&#39;</span><span class="p">,</span><span class="s1">&#39;label&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">sort_values</span><span class="p">([</span><span class="s1">&#39;type&#39;</span><span class="p">,</span><span class="s1">&#39;dtype&#39;</span><span class="p">])</span>
@@ -13670,7 +13671,7 @@ div#notebook {
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[22]:</div>
+<div class="prompt output_prompt">Out[42]:</div>
 
 
 
@@ -14451,7 +14452,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[23]:</div>
+<div class="prompt input_prompt">In&nbsp;[43]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="n">runCorrDrop_</span><span class="p">(</span><span class="n">o_4550</span><span class="o">.</span><span class="n">dropna</span><span class="p">(),[</span><span class="s1">&#39;d3mIndex&#39;</span><span class="p">,</span><span class="s1">&#39;MouseID&#39;</span><span class="p">,</span><span class="s1">&#39;Genotype&#39;</span><span class="p">,</span> <span class="s1">&#39;Treatment&#39;</span><span class="p">,</span><span class="s1">&#39;Behavior&#39;</span><span class="p">,</span><span class="s1">&#39;label&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">sort_values</span><span class="p">([</span><span class="s1">&#39;type&#39;</span><span class="p">,</span><span class="s1">&#39;dtype&#39;</span><span class="p">])</span>
@@ -14467,7 +14468,7 @@ div#notebook {
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[23]:</div>
+<div class="prompt output_prompt">Out[43]:</div>
 
 
 
@@ -15248,7 +15249,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[24]:</div>
+<div class="prompt input_prompt">In&nbsp;[44]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="n">runCorrDrop_</span><span class="p">(</span><span class="n">flag</span><span class="p">,[</span><span class="s1">&#39;name&#39;</span><span class="p">,</span><span class="s1">&#39;landmass&#39;</span><span class="p">,</span><span class="s1">&#39;zone&#39;</span><span class="p">,</span><span class="s1">&#39;language&#39;</span><span class="p">,</span><span class="s1">&#39;religion&#39;</span><span class="p">,</span><span class="s1">&#39;red&#39;</span><span class="p">,</span><span class="s1">&#39;green&#39;</span><span class="p">,</span><span class="s1">&#39;blue&#39;</span><span class="p">,</span><span class="s1">&#39;gold&#39;</span><span class="p">,</span><span class="s1">&#39;white&#39;</span><span class="p">,</span><span class="s1">&#39;black&#39;</span><span class="p">,</span><span class="s1">&#39;orange&#39;</span><span class="p">,</span><span class="s1">&#39;mainhue&#39;</span><span class="p">,</span><span class="s1">&#39;crecent&#39;</span><span class="p">,</span><span class="s1">&#39;triangle&#39;</span><span class="p">,</span><span class="s1">&#39;icon&#39;</span><span class="p">,</span><span class="s1">&#39;animate&#39;</span><span class="p">,</span><span class="s1">&#39;text&#39;</span><span class="p">,</span><span class="s1">&#39;topleft&#39;</span><span class="p">,</span><span class="s1">&#39;botright&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">sort_values</span><span class="p">([</span><span class="s1">&#39;type&#39;</span><span class="p">,</span><span class="s1">&#39;dtype&#39;</span><span class="p">])</span>
@@ -15264,7 +15265,7 @@ div#notebook {
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[24]:</div>
+<div class="prompt output_prompt">Out[44]:</div>
 
 
 
@@ -15462,7 +15463,7 @@ div#notebook {
       <td>(0.0833, 0.1667, 0.75)</td>
       <td>6</td>
       <td>0.030928</td>
-      <td>(0.1334, 0.0516, 0.4873, -0.1323)</td>
+      <td>(0.1427, 0.0376, 0.4873, -0.0185)</td>
       <td>int64</td>
       <td>True</td>
       <td>categorical</td>
@@ -15474,7 +15475,7 @@ div#notebook {
       <td>(0.1667, 0.0833, 0.75)</td>
       <td>4</td>
       <td>0.020619</td>
-      <td>(0.1218, 0.0916, 0.3824, -0.0119)</td>
+      <td>(0.108, 0.054, 0.3824, -0.0237)</td>
       <td>int64</td>
       <td>True</td>
       <td>categorical</td>
@@ -15486,7 +15487,7 @@ div#notebook {
       <td>(0.0833, 0.25, 0.6667)</td>
       <td>10</td>
       <td>0.051546</td>
-      <td>(0.1867, 0.1976, 0.5482, -0.0587)</td>
+      <td>(0.1791, 0.0945, 0.5482, -0.0587)</td>
       <td>int64</td>
       <td>True</td>
       <td>categorical</td>
@@ -15498,7 +15499,7 @@ div#notebook {
       <td>(0.0, 0.25, 0.75)</td>
       <td>8</td>
       <td>0.041237</td>
-      <td>(0.1353, 0.108, 0.39, -0.0205)</td>
+      <td>(0.1434, 0.1065, 0.39, -0.002)</td>
       <td>int64</td>
       <td>True</td>
       <td>categorical</td>
@@ -15510,7 +15511,7 @@ div#notebook {
       <td>(0.0833, 0.0833, 0.8333)</td>
       <td>136</td>
       <td>0.701031</td>
-      <td>(0.1643, 0.1407, 0.6695, -0.0162)</td>
+      <td>(0.1654, 0.1365, 0.6695, 0.0)</td>
       <td>int64</td>
       <td>False</td>
       <td>numerical</td>
@@ -15522,7 +15523,7 @@ div#notebook {
       <td>(0.0833, 0.0, 0.9167)</td>
       <td>48</td>
       <td>0.247423</td>
-      <td>(0.1678, 0.1265, 0.7681, 0.0)</td>
+      <td>(0.1697, 0.1243, 0.7681, 0.0)</td>
       <td>int64</td>
       <td>False</td>
       <td>numerical</td>
@@ -15534,7 +15535,7 @@ div#notebook {
       <td>(0.0, 0.0833, 0.9167)</td>
       <td>5</td>
       <td>0.025773</td>
-      <td>(0.0829, 0.0677, 0.1782, -0.0106)</td>
+      <td>(0.0737, 0.0677, 0.1732, -0.0106)</td>
       <td>int64</td>
       <td>True</td>
       <td>numerical</td>
@@ -15546,7 +15547,7 @@ div#notebook {
       <td>(0.0, 0.0833, 0.9167)</td>
       <td>12</td>
       <td>0.061856</td>
-      <td>(0.0829, 0.0677, 0.2296, -0.0187)</td>
+      <td>(0.0802, 0.0829, 0.2228, -0.0187)</td>
       <td>int64</td>
       <td>True</td>
       <td>numerical</td>
@@ -15558,7 +15559,7 @@ div#notebook {
       <td>(0.0, 0.0, 1.0)</td>
       <td>8</td>
       <td>0.041237</td>
-      <td>(0.1102, 0.114, 0.2582, -0.0079)</td>
+      <td>(0.1057, 0.0878, 0.2582, -0.0079)</td>
       <td>int64</td>
       <td>True</td>
       <td>numerical</td>
@@ -15570,7 +15571,7 @@ div#notebook {
       <td>(0.0, 0.0, 1.0)</td>
       <td>4</td>
       <td>0.020619</td>
-      <td>(0.1004, 0.0388, 0.9181, -0.0)</td>
+      <td>(0.0198, 0.003, 0.0678, -0.0)</td>
       <td>int64</td>
       <td>True</td>
       <td>numerical</td>
@@ -15582,7 +15583,7 @@ div#notebook {
       <td>(0.0833, 0.0, 0.9167)</td>
       <td>3</td>
       <td>0.015464</td>
-      <td>(0.1382, 0.0552, 0.9258, 0.0)</td>
+      <td>(0.0501, 0.0481, 0.1503, 0.0)</td>
       <td>int64</td>
       <td>True</td>
       <td>numerical</td>
@@ -15594,7 +15595,7 @@ div#notebook {
       <td>(0.0833, 0.0, 0.9167)</td>
       <td>3</td>
       <td>0.015464</td>
-      <td>(0.1191, 0.0239, 0.7046, 0.0)</td>
+      <td>(0.0158, 0.0109, 0.0428, 0.0)</td>
       <td>int64</td>
       <td>True</td>
       <td>numerical</td>
@@ -15606,7 +15607,7 @@ div#notebook {
       <td>(0.0, 0.0, 1.0)</td>
       <td>14</td>
       <td>0.072165</td>
-      <td>(0.1269, 0.0681, 0.9483, -0.0205)</td>
+      <td>(0.0479, 0.0116, 0.2151, -0.0205)</td>
       <td>int64</td>
       <td>True</td>
       <td>numerical</td>
@@ -15672,7 +15673,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[25]:</div>
+<div class="prompt input_prompt">In&nbsp;[45]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="n">runCorrDrop_</span><span class="p">(</span><span class="n">cars</span><span class="p">,[</span><span class="s1">&#39;buying&#39;</span><span class="p">,</span><span class="s1">&#39;maint&#39;</span><span class="p">,</span><span class="s1">&#39;doors&#39;</span><span class="p">,</span><span class="s1">&#39;persons&#39;</span><span class="p">,</span><span class="s1">&#39;lug_boot&#39;</span><span class="p">,</span><span class="s1">&#39;safety&#39;</span><span class="p">,</span><span class="s1">&#39;class&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">sort_values</span><span class="p">([</span><span class="s1">&#39;type&#39;</span><span class="p">,</span><span class="s1">&#39;dtype&#39;</span><span class="p">])</span>
@@ -15688,7 +15689,7 @@ div#notebook {
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[25]:</div>
+<div class="prompt output_prompt">Out[45]:</div>
 
 
 
@@ -15820,7 +15821,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[26]:</div>
+<div class="prompt input_prompt">In&nbsp;[46]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="n">runCorrDrop_</span><span class="p">(</span><span class="n">abalone</span><span class="p">,[</span><span class="s1">&#39;sex&#39;</span><span class="p">,</span><span class="s1">&#39;rings&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">sort_values</span><span class="p">([</span><span class="s1">&#39;type&#39;</span><span class="p">,</span><span class="s1">&#39;dtype&#39;</span><span class="p">])</span>
@@ -15836,7 +15837,7 @@ div#notebook {
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[26]:</div>
+<div class="prompt output_prompt">Out[46]:</div>
 
 
 
@@ -15992,7 +15993,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[27]:</div>
+<div class="prompt input_prompt">In&nbsp;[47]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="n">runCorrDrop_</span><span class="p">(</span><span class="n">credit</span><span class="p">,[</span><span class="s1">&#39;A1&#39;</span><span class="p">,</span><span class="s1">&#39;A4&#39;</span><span class="p">,</span><span class="s1">&#39;A5&#39;</span><span class="p">,</span><span class="s1">&#39;A6&#39;</span><span class="p">,</span><span class="s1">&#39;A8&#39;</span><span class="p">,</span><span class="s1">&#39;A9&#39;</span><span class="p">,</span><span class="s1">&#39;A11&#39;</span><span class="p">,</span><span class="s1">&#39;A12&#39;</span><span class="p">,</span><span class="s1">&#39;A15&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s1">&#39;type&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">sort_values</span><span class="p">([</span><span class="s1">&#39;type&#39;</span><span class="p">,</span><span class="s1">&#39;dtype&#39;</span><span class="p">])</span>
@@ -16008,7 +16009,7 @@ div#notebook {
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[27]:</div>
+<div class="prompt output_prompt">Out[47]:</div>
 
 
 
@@ -16110,7 +16111,7 @@ div#notebook {
       <td>(0.0, 0.0, 1.0)</td>
       <td>3</td>
       <td>0.004348</td>
-      <td>(-0.0254, -0.0105, 0.9071, -0.9049)</td>
+      <td>(0.0009, 0.0, 0.0052, 0.0)</td>
       <td>int64</td>
       <td>True</td>
       <td>categorical</td>
@@ -16122,7 +16123,7 @@ div#notebook {
       <td>(0.0, 0.1111, 0.8889)</td>
       <td>14</td>
       <td>0.020290</td>
-      <td>(0.1033, 0.0654, 0.9526, -0.6716)</td>
+      <td>(0.11, 0.0519, 0.3225, 0.0)</td>
       <td>int64</td>
       <td>False</td>
       <td>categorical</td>
@@ -16134,7 +16135,7 @@ div#notebook {
       <td>(0.0, 0.2222, 0.7778)</td>
       <td>8</td>
       <td>0.011594</td>
-      <td>(0.0968, 0.0662, 0.9905, -0.6708)</td>
+      <td>(0.0947, 0.0476, 0.3246, 0.0)</td>
       <td>int64</td>
       <td>True</td>
       <td>categorical</td>
@@ -16146,7 +16147,7 @@ div#notebook {
       <td>(0.0, 0.0, 1.0)</td>
       <td>3</td>
       <td>0.004348</td>
-      <td>(0.1023, 0.0532, 0.9516, -0.1272)</td>
+      <td>(0.0006, 0.0, 0.0064, 0.0)</td>
       <td>int64</td>
       <td>True</td>
       <td>categorical</td>
@@ -16158,7 +16159,7 @@ div#notebook {
       <td>(0.0, 0.2222, 0.7778)</td>
       <td>23</td>
       <td>0.033333</td>
-      <td>(0.1746, 0.1477, 0.9992, -0.5728)</td>
+      <td>(0.1783, 0.1689, 0.4186, 0.0)</td>
       <td>int64</td>
       <td>False</td>
       <td>numerical</td>
@@ -16170,7 +16171,7 @@ div#notebook {
       <td>(0.0, 0.0, 1.0)</td>
       <td>171</td>
       <td>0.247826</td>
-      <td>(0.1536, 0.0425, 0.9546, -0.0121)</td>
+      <td>(0.0578, 0.0455, 0.2663, -0.026)</td>
       <td>int64</td>
       <td>False</td>
       <td>numerical</td>
@@ -16182,7 +16183,7 @@ div#notebook {
       <td>(0.0, 0.1111, 0.8889)</td>
       <td>240</td>
       <td>0.347826</td>
-      <td>(0.2132, 0.077, 0.9994, 0.0138)</td>
+      <td>(0.1159, 0.0789, 0.4266, 0.0)</td>
       <td>int64</td>
       <td>False</td>
       <td>numerical</td>
@@ -16194,7 +16195,7 @@ div#notebook {
       <td>(0.0, 0.0, 1.0)</td>
       <td>350</td>
       <td>0.507246</td>
-      <td>(0.0693, 0.0604, 0.9994, -0.8853)</td>
+      <td>(0.0695, 0.0578, 0.2454, -0.0048)</td>
       <td>float64</td>
       <td>False</td>
       <td>numerical</td>
@@ -16206,7 +16207,7 @@ div#notebook {
       <td>(0.0, 0.0, 1.0)</td>
       <td>215</td>
       <td>0.311594</td>
-      <td>(0.125, 0.1044, 0.9955, -0.905)</td>
+      <td>(0.1238, 0.0983, 0.2703, 0.0)</td>
       <td>float64</td>
       <td>False</td>
       <td>numerical</td>
@@ -16218,7 +16219,7 @@ div#notebook {
       <td>(0.0, 0.2222, 0.7778)</td>
       <td>132</td>
       <td>0.191304</td>
-      <td>(0.1527, 0.1568, 0.9584, -0.6852)</td>
+      <td>(0.1536, 0.1488, 0.305, 0.0)</td>
       <td>float64</td>
       <td>False</td>
       <td>numerical</td>
@@ -16236,7 +16237,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[28]:</div>
+<div class="prompt input_prompt">In&nbsp;[48]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="n">runCorrDrop_</span><span class="p">(</span><span class="n">cmc</span><span class="p">,[</span><span class="s1">&#39;wife_edu&#39;</span><span class="p">,</span><span class="s1">&#39;husband_edu&#39;</span><span class="p">,</span><span class="s1">&#39;religion&#39;</span><span class="p">,</span><span class="s1">&#39;isworking&#39;</span><span class="p">,</span><span class="s1">&#39;occupation&#39;</span><span class="p">,</span><span class="s1">&#39;std_living&#39;</span><span class="p">,</span><span class="s1">&#39;media&#39;</span><span class="p">,</span><span class="s1">&#39;class&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">sort_values</span><span class="p">([</span><span class="s1">&#39;type&#39;</span><span class="p">,</span><span class="s1">&#39;dtype&#39;</span><span class="p">])</span>
@@ -16252,7 +16253,7 @@ div#notebook {
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[28]:</div>
+<div class="prompt output_prompt">Out[48]:</div>
 
 
 
@@ -16330,7 +16331,7 @@ div#notebook {
       <td>(0.1667, 0.3333, 0.5)</td>
       <td>4</td>
       <td>0.002716</td>
-      <td>(0.2083, 0.1109, 0.5506, -0.0504)</td>
+      <td>(0.1982, 0.1112, 0.5506, -0.0504)</td>
       <td>int64</td>
       <td>True</td>
       <td>categorical</td>
@@ -16342,7 +16343,7 @@ div#notebook {
       <td>(0.1667, 0.3333, 0.5)</td>
       <td>4</td>
       <td>0.002716</td>
-      <td>(0.1903, 0.1416, 0.5323, -0.0192)</td>
+      <td>(0.1866, 0.1416, 0.5323, 0.0)</td>
       <td>int64</td>
       <td>True</td>
       <td>categorical</td>
@@ -16354,7 +16355,7 @@ div#notebook {
       <td>(0.0, 0.3333, 0.6667)</td>
       <td>4</td>
       <td>0.002716</td>
-      <td>(0.1414, 0.2874, 0.9697, -0.9854)</td>
+      <td>(0.1241, 0.1035, 0.292, -0.0059)</td>
       <td>int64</td>
       <td>True</td>
       <td>categorical</td>
@@ -16366,7 +16367,7 @@ div#notebook {
       <td>(0.0, 0.3333, 0.6667)</td>
       <td>4</td>
       <td>0.002716</td>
-      <td>(0.2543, 0.1577, 0.9904, -0.0036)</td>
+      <td>(0.1116, 0.1466, 0.2105, 0.0)</td>
       <td>int64</td>
       <td>True</td>
       <td>categorical</td>
@@ -16378,7 +16379,7 @@ div#notebook {
       <td>(0.1667, 0.0, 0.8333)</td>
       <td>34</td>
       <td>0.023082</td>
-      <td>(0.156, 0.1383, 0.5475, 0.0)</td>
+      <td>(0.1534, 0.1391, 0.5475, 0.0)</td>
       <td>int64</td>
       <td>False</td>
       <td>numerical</td>
@@ -16390,7 +16391,7 @@ div#notebook {
       <td>(0.1667, 0.0, 0.8333)</td>
       <td>15</td>
       <td>0.010183</td>
-      <td>(0.1402, 0.1288, 0.5195, 0.0)</td>
+      <td>(0.1367, 0.1103, 0.5195, 0.0)</td>
       <td>int64</td>
       <td>True</td>
       <td>numerical</td>
@@ -16402,7 +16403,7 @@ div#notebook {
       <td>(0.0, 0.0, 1.0)</td>
       <td>3</td>
       <td>0.002037</td>
-      <td>(0.1883, 0.0693, 0.9854, -0.0144)</td>
+      <td>(0.0397, 0.0, 0.1351, 0.0)</td>
       <td>int64</td>
       <td>True</td>
       <td>numerical</td>
@@ -16420,7 +16421,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[43]:</div>
+<div class="prompt input_prompt">In&nbsp;[49]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="n">runCorrDrop_</span><span class="p">(</span><span class="n">ss</span><span class="p">,</span><span class="n">unknown</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
@@ -16436,7 +16437,7 @@ div#notebook {
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[43]:</div>
+<div class="prompt output_prompt">Out[49]:</div>
 
 
 
@@ -16478,7 +16479,7 @@ div#notebook {
       <td>(0.2222, 0.4444, 0.3333)</td>
       <td>100</td>
       <td>0.015699</td>
-      <td>(0.3146, 0.3635, 0.5617, 0.0)</td>
+      <td>(0.3111, 0.3682, 0.5409, 0.0)</td>
       <td>int64</td>
       <td>False</td>
       <td>unknown</td>
@@ -16550,7 +16551,7 @@ div#notebook {
       <td>(0.0, 0.2222, 0.7778)</td>
       <td>4</td>
       <td>0.000628</td>
-      <td>(0.0307, 0.0161, 0.8981, -0.6859)</td>
+      <td>(-0.0057, -0.0063, 0.0005, -0.011)</td>
       <td>int64</td>
       <td>True</td>
       <td>unknown</td>
@@ -16574,7 +16575,7 @@ div#notebook {
       <td>(0.4444, 0.2222, 0.3333)</td>
       <td>48</td>
       <td>0.007535</td>
-      <td>(0.3602, 0.4074, 0.9996, -0.8348)</td>
+      <td>(0.3513, 0.3281, 0.6228, 0.0)</td>
       <td>int64</td>
       <td>False</td>
       <td>unknown</td>
@@ -16586,7 +16587,7 @@ div#notebook {
       <td>(0.2222, 0.3333, 0.4444)</td>
       <td>41</td>
       <td>0.006436</td>
-      <td>(0.3153, 0.3487, 0.9713, -0.7297)</td>
+      <td>(0.2993, 0.2492, 0.5674, 0.0)</td>
       <td>int64</td>
       <td>False</td>
       <td>unknown</td>
@@ -16598,7 +16599,7 @@ div#notebook {
       <td>(0.0, 0.5556, 0.4444)</td>
       <td>41</td>
       <td>0.006436</td>
-      <td>(0.3451, 0.3435, 0.9903, 0.0476)</td>
+      <td>(0.2447, 0.2996, 0.3794, 0.0)</td>
       <td>int64</td>
       <td>False</td>
       <td>unknown</td>
@@ -16610,7 +16611,7 @@ div#notebook {
       <td>(0.2222, 0.4444, 0.3333)</td>
       <td>49</td>
       <td>0.007692</td>
-      <td>(0.4546, 0.4654, 0.9893, 0.0979)</td>
+      <td>(0.3514, 0.4161, 0.61, 0.0)</td>
       <td>int64</td>
       <td>False</td>
       <td>unknown</td>
@@ -16622,7 +16623,7 @@ div#notebook {
       <td>(0.4444, 0.4444, 0.1111)</td>
       <td>41</td>
       <td>0.006436</td>
-      <td>(0.4848, 0.4573, 0.9924, 0.1322)</td>
+      <td>(0.386, 0.3892, 0.6194, 0.0)</td>
       <td>int64</td>
       <td>False</td>
       <td>unknown</td>
@@ -16634,7 +16635,7 @@ div#notebook {
       <td>(0.0, 0.5556, 0.4444)</td>
       <td>78</td>
       <td>0.012245</td>
-      <td>(0.3637, 0.3385, 0.9982, 0.0921)</td>
+      <td>(0.2629, 0.2963, 0.4717, 0.0)</td>
       <td>int64</td>
       <td>False</td>
       <td>unknown</td>
@@ -16646,7 +16647,7 @@ div#notebook {
       <td>(0.0, 0.0, 1.0)</td>
       <td>16</td>
       <td>0.002512</td>
-      <td>(0.2239, 0.1451, 0.9983, 0.0697)</td>
+      <td>(0.1213, 0.1098, 0.2166, 0.0)</td>
       <td>int64</td>
       <td>True</td>
       <td>unknown</td>
@@ -16658,7 +16659,7 @@ div#notebook {
       <td>(0.0, 0.1111, 0.8889)</td>
       <td>3</td>
       <td>0.000471</td>
-      <td>(0.2066, 0.1743, 0.876, -0.2101)</td>
+      <td>(0.1105, 0.1264, 0.2304, 0.0)</td>
       <td>int64</td>
       <td>True</td>
       <td>unknown</td>
@@ -16676,7 +16677,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[44]:</div>
+<div class="prompt input_prompt">In&nbsp;[50]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="n">runCorrDrop_</span><span class="p">(</span><span class="n">mmold</span><span class="p">,</span><span class="n">unknown</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
@@ -16692,7 +16693,7 @@ div#notebook {
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[44]:</div>
+<div class="prompt output_prompt">Out[50]:</div>
 
 
 
@@ -17004,7 +17005,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[46]:</div>
+<div class="prompt input_prompt">In&nbsp;[51]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="n">runCorrDrop_</span><span class="p">(</span><span class="n">countries</span><span class="p">,</span><span class="n">unknown</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
@@ -17020,7 +17021,7 @@ div#notebook {
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[46]:</div>
+<div class="prompt output_prompt">Out[51]:</div>
 
 
 
@@ -17062,7 +17063,7 @@ div#notebook {
       <td>(0.25, 0.0, 0.75)</td>
       <td>5</td>
       <td>0.003307</td>
-      <td>(0.1543, 0.0713, 0.4487, 0.0)</td>
+      <td>(0.1426, 0.1102, 0.4487, -0.0052)</td>
       <td>int64</td>
       <td>True</td>
       <td>unknown</td>
@@ -17074,7 +17075,7 @@ div#notebook {
       <td>(0.5, 0.0, 0.5)</td>
       <td>10</td>
       <td>0.006614</td>
-      <td>(0.0936, 0.0, 0.5257, -0.2453)</td>
+      <td>(0.1429, 0.011, 0.3591, 0.0)</td>
       <td>int64</td>
       <td>True</td>
       <td>unknown</td>
@@ -17098,7 +17099,7 @@ div#notebook {
       <td>(0.25, 0.0, 0.75)</td>
       <td>7</td>
       <td>0.004630</td>
-      <td>(-0.0112, 0.0005, 1.0, -0.9322)</td>
+      <td>(0.018, 0.0005, 0.0617, 0.0)</td>
       <td>int64</td>
       <td>True</td>
       <td>unknown</td>
@@ -17122,7 +17123,7 @@ div#notebook {
       <td>(0.0, 0.0, 1.0)</td>
       <td>17</td>
       <td>0.011243</td>
-      <td>(0.2046, 0.0381, 0.9784, -0.0952)</td>
+      <td>(0.0128, 0.0339, 0.0793, -0.0952)</td>
       <td>int64</td>
       <td>True</td>
       <td>unknown</td>
@@ -17134,7 +17135,7 @@ div#notebook {
       <td>(0.0, 0.0, 1.0)</td>
       <td>8</td>
       <td>0.005291</td>
-      <td>(0.2191, 0.0283, 0.9727, 0.003)</td>
+      <td>(0.0228, 0.0124, 0.0723, 0.0)</td>
       <td>int64</td>
       <td>True</td>
       <td>unknown</td>
